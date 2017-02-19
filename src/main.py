@@ -5,6 +5,7 @@ import os
 
 directory = "C:\\Users\\bikas\\Desktop"
 
+
 def get_drives():
     drives = []
     bitmask = windll.kernel32.GetLogicalDrives()
@@ -22,8 +23,9 @@ def get_desktop_file():
 
 
 prev_dirve = get_drives()
+
 while(True):
-    get_desktop_file()
+    print(get_desktop_file())
 
     print(prev_dirve)
     current_drive = get_drives()
