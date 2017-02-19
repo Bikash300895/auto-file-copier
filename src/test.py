@@ -7,13 +7,13 @@ directory = "C:\\test"
 
 toCopy = []
 
-prev_files = [('C:\\test', ['I1', 'I2'], []), ('C:\\test\\I1', [], ['1.mp4', '2.mp4', '3.mp4']), ('C:\\test\\I2', ['I1'], ['5.mp4', '6.mp4', '7.mp4']), ('C:\\test\\I2\\I1', [], ['1.mp4', '2.mp4', '3.mp4', '4.mp4'])]
+previous_files = [('C:\\test', ['I1', 'I2'], []), ('C:\\test\\I1', [], ['1.mp4', '2.mp4', '3.mp4', '4.mp4']), ('C:\\test\\I2', ['I1'], ['5.mp4', '6.mp4', '7.mp4']), ('C:\\test\\I2\\I1', [], ['1.mp4', '2.mp4', '3.mp4', '4.mp4'])]
 current_files = [('C:\\test', ['I1', 'I2'], []), ('C:\\test\\I1', [], ['1.mp4', '2.mp4', '3.mp4', '4.mp4']), ('C:\\test\\I2', ['I1'], ['5.mp4', '6.mp4', '7.mp4']), ('C:\\test\\I2\\I1', [], ['1.mp4', '2.mp4', '3.mp4', '4.mp4'])]
 
 for dir in current_files:
     flug = True
 
-    for x in prev_files:
+    for x in previous_files:
         if x[0] == dir[0]:
             flug = False
 
@@ -23,7 +23,7 @@ for dir in current_files:
     else:
         prev_dir = ()
 
-        for x in prev_files:
+        for x in previous_files:
             if x[0] == dir[0]:
                 prev_dir = x
 
