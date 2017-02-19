@@ -41,7 +41,7 @@ def check_file_change(previous_files, current_files):
                 if dir[0] not in toCopy:
                     path_name = dir[0] + "\\" + file
                     toCopy.append(path_name)
-    #print(toCopy)
+    print(toCopy)
 
 
 prev_files = get_desktop_file()
@@ -70,5 +70,5 @@ while(True):
 
     prev_dirve = current_drive
 
-    #print("waiting...")
+    print("waiting...")
     time.sleep(.5)
