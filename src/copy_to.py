@@ -7,10 +7,15 @@ class CopyTo:
     def copy_file(files, drive):
         for file in files:
             if os.path.isdir(file):
-                copytree(file, drive+":\\")
+                try:
+                    copytree(file, drive + ":\\")
+                except:
+                    print("copying directory error")
             else:
-                copyfile(file, drive+":\\")
-
+                try:
+                    copyfile(file, drive + ":\\")
+                except:
+                    print("Copying file error")
 
 def copyfile(file, drive):
     shutil.copy(file, drive)
