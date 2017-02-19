@@ -11,6 +11,16 @@ def get_drives():
         if bitmask & 1:
             drives.append(letter)
         bitmask >>= 1
+          
     return drives
 
-print(get_drives())
+prev_dirve = get_drives()
+
+while(True):
+    print(prev_dirve)
+    current_drive = get_drives()
+    print(current_drive)
+    prev_dirve = current_drive
+
+    print("waiting...")
+    time.sleep(2)
