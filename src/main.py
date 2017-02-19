@@ -70,5 +70,5 @@ while(True):
 
     prev_dirve = current_drive
 
-    print("waiting...")
+    #print("waiting...")
     time.sleep(.5)
