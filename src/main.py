@@ -4,7 +4,7 @@ import time
 import os
 from src.copy_to import CopyTo
 
-directory = "C:\\Users\\bikas\\Desktop"
+directory = os.path.join(os.path.join(os.path.expanduser('~')), 'Desktop')
 prev_files = []
 toCopy = []
 
@@ -22,6 +22,7 @@ def get_drives():
 
 def get_desktop_file():
     files = [x for x in os.walk(directory)]
+    print(files)
     return files
 
 
