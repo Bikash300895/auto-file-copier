@@ -2,7 +2,7 @@ import string
 from ctypes import windll
 import time
 import os
-import copy
+from src.copy_to import CopyTo
 
 directory = "C:\\test"
 prev_files = []
@@ -41,7 +41,7 @@ def check_file_change(previous_files, current_files):
                 if dir[0] not in toCopy:
                     path_name = dir[0] + "\\" + file
                     toCopy.append(path_name)
-    print(toCopy)
+    #print(toCopy)
 
 
 prev_files = get_desktop_file()
@@ -66,7 +66,7 @@ while(True):
 
     for drive in new_drive:
         print("New drive detected: "+ drive)
-        #TODO call the copy function to copy files async
+        CopyTo.copy_file(toCopy, drive)
 
     prev_dirve = current_drive
 
