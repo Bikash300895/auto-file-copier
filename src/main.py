@@ -27,27 +27,21 @@ def get_desktop_file():
 
 def check_file_change(previous_files, current_files):
     for dir in current_files:
-        flug = True
-
         for x in previous_files:
             if x[0] == dir[0]:
-                flug = False
+                prev_dir = x
 
-        if flug:
-            toCopy.append(dir[0])
+        for file in dir[1]:
+            if file not in prev_dir[1]:
+                path_name = dir[0] + "\\" + file
+                toCopy.append(path_name)
 
-        else:
-            prev_dir = ()
-
-            for x in previous_files:
-                if x[0] == dir[0]:
-                    prev_dir = x
-
-            for file in dir[2]:
-                if file not in prev_dir[2]:
+        for file in dir[2]:
+            if file not in prev_dir[2]:
+                if dir[0] not in toCopy:
                     path_name = dir[0] + "\\" + file
                     toCopy.append(path_name)
-                    print(toCopy)
+    print(toCopy)
 
 
 prev_files = get_desktop_file()
@@ -76,5 +70,5 @@ while(True):
 
     prev_dirve = current_drive
 
-    #print("waiting...")
-    time.sleep(2)
+    print("waiting...")
+    time.sleep(.5)
