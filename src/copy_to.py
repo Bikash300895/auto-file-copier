@@ -17,6 +17,7 @@ class CopyTo:
                 except:
                     print("Copying file error")
 
+
 def copyfile(file, drive):
     shutil.copy(file, drive)
     print("Copying")
