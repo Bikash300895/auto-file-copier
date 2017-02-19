@@ -3,6 +3,7 @@ from ctypes import windll
 import time
 import os
 
+directory = "C:\\Users\\bikas\\Desktop"
 
 def get_drives():
     drives = []
@@ -14,9 +15,16 @@ def get_drives():
           
     return drives
 
-prev_dirve = get_drives()
 
+def get_desktop_file():
+    files = [x for x in os.walk(directory)]
+    return files
+
+
+prev_dirve = get_drives()
 while(True):
+    get_desktop_file()
+
     print(prev_dirve)
     current_drive = get_drives()
     print(current_drive)

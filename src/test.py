@@ -1,11 +1,9 @@
+import os
+directory = "C:\\test"
 
-current_drive = ['C', 'E', 'F']
-prev_dirve = ['C', 'E']
+# for name in os.listdir():
+#     if os.path.isdir("C:\\Users\\bikas\\Desktop"):
+#         print(name)
 
-new_drive = []
-for drive in current_drive:
-    if drive not in prev_dirve:
-        new_drive.append(drive)
-
-for drive in new_drive:
-    print("New drive detected: "+ drive)
+list = [x for x in os.walk(directory)]
+print(list)
