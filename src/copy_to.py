@@ -7,13 +7,13 @@ class CopyTo:
     def copy_file(files, drive):
         for file in files:
             if os.path.isdir(file):
-                copytree(file, drive)
+                copytree(file, drive+":\\")
             else:
-                copyfile(file, drive)
+                copyfile(file, drive+":\\")
 
 
 def copyfile(file, drive):
-    shutil.copy(file, drive+":\\")
+    shutil.copy(file, drive)
     print("Copying")
 
 
@@ -26,3 +26,5 @@ def copytree(src, dst, symlinks=False, ignore=None):
         else:
             shutil.copy2(s, d)
         print("Copying")
+
+#copytree("C:\\Users\\bikas\\Desktop\\test", "D:\\")

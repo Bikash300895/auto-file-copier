@@ -4,7 +4,7 @@ import time
 import os
 from src.copy_to import CopyTo
 
-directory = "C:\\test"
+directory = "C:\\Users\\bikas\\Desktop"
 prev_files = []
 toCopy = []
 
